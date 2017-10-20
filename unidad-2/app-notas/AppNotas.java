@@ -6,7 +6,7 @@ public class AppNotas {
 	
 	public static void main(String[] args) throws IOException {
 
-		byte opcion = 0;
+    byte opcion = 0;
 		byte cant = 0;
 		
 		float[] vectorNotas = new float[8];

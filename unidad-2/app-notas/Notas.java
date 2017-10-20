@@ -9,7 +9,7 @@ public class Notas {
 	// Método (1) Ingresar notas
 	public byte ingresarNotas(float[] vectorNotas) throws IOException {
 		
-		float nota = 0;
+    float nota = 0;
 
 		System.out.print("Cantidad de notas : ");
 		byte cant = Byte.parseByte(entrada.readLine());
@@ -63,7 +63,7 @@ public class Notas {
 	// Método (5) Nota más baja
 	public float notaMenor(float[] vectorNotas, byte cant) {
 
-		float notaMenor = 0;
+    float notaMenor = 0;
 
 		notaMenor = vectorNotas[0];
 
@@ -77,31 +77,31 @@ public class Notas {
 
 	// Método (6) Ver nota específica
 	public float buscarNota (float n[], int cant) throws IOException {
-		byte buscar = 0, aux = 0;            
-        System.out.print("Ingrese posición de la nota a buscar : ");
-        buscar = Byte.parseByte(entrada.readLine());
-        buscar = (byte) (buscar - 1);
-        aux = (byte) (buscar + 1);
+    byte buscar = 0, aux = 0;            
+    System.out.print("Ingrese posición de la nota a buscar : ");
+    buscar = Byte.parseByte(entrada.readLine());
+    buscar = (byte) (buscar - 1);
+    aux = (byte) (buscar + 1);
             
-        System.out.println("Nota posición número " + aux + " : " + n[buscar]);
+    System.out.println("Nota posición número " + aux + " : " + n[buscar]);
             
-        return (buscar);
+    return (buscar);
     }   
 
 	// Método (7) Modificar nota específica
-    public float modificarNota(float n[], int cant) throws IOException {
-        byte modificar = 0, aux = 0;
+  public float modificarNota(float n[], int cant) throws IOException {
+    byte modificar = 0, aux = 0;
         
-        System.out.print("Ingrese el número de posición de la nota a modificar : ");
-        modificar = Byte.parseByte(entrada.readLine());
-        modificar = (byte) (modificar - 1);
-        aux = (byte) (modificar + 1);
+    System.out.print("Ingrese el número de posición de la nota a modificar : ");
+    modificar = Byte.parseByte(entrada.readLine());
+    modificar = (byte) (modificar - 1);
+    aux = (byte) (modificar + 1);
+      
+    System.out.println("Nota actual, posición " + aux + " : " + n[modificar]);
+    System.out.print("Ingrese nueva nota : ");
+    n[modificar] = Float.parseFloat(entrada.readLine());
         
-        System.out.println("Nota actual, posición " + aux + " : " + n[modificar]);
-        System.out.print("Ingrese nueva nota : ");
-        n[modificar] = Float.parseFloat(entrada.readLine());
-        
-        return (modificar);
+    return (modificar);
     }
 
 	// Método (6) Eliminar nota específica
