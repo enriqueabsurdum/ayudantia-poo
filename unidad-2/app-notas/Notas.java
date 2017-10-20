@@ -2,11 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 public class Notas {
 
 	BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-
 
 	// Método (1) Ingresar notas
 	public byte ingresarNotas(float[] vectorNotas) throws IOException {
