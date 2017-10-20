@@ -7,15 +7,15 @@ public class AppNotas {
 	public static void main(String[] args) throws IOException {
 
 		byte opcion = 0;
-		int cant = 0;
-		float notaMenor = 0f;
-		float[] vectorNotas = new float[8];
+		byte cant = 0;
 		
+		float[] vectorNotas = new float[8];
 		Notas notas = new Notas();
+		
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 				
 		do {
-			System.out.println("\nMENÚ PRINCIPAL APP NOTAS\n"
+			System.out.println("\nMENÚ PRINCIPAL APLICACIÓN NOTAS\n"
 					+ "(1) Ingresar notas\n"
 					+ "(2) Listar notas\n"
 					+ "(3) Promediar notas\n"
@@ -37,38 +37,40 @@ public class AppNotas {
 				break;
 				
 			case 2:
-				notas.listarNotas(cant, vectorNotas);
+				notas.listarNotas(vectorNotas, cant);
 				break;
 					
 			case 3:
-				float promedio = notas.promediarNotas(cant, vectorNotas);
+				float promedio = notas.promediarNotas(vectorNotas, cant);
 				System.out.println("El promedio de las notas es : " + promedio);
 				break;
 				
 			case 4:
-				System.out.println("Opción no disponible :(");
+				float notaMayor = notas.notaMayor(vectorNotas, cant);
+				System.out.println("La nota mayor es : " + notaMayor);
 				break;
 			
 			case 5:
-				notaMenor = notas.notaMenor(cant, vectorNotas);
+				float notaMenor = notas.notaMenor(vectorNotas, cant);
 				System.out.println("La nota menor es : " + notaMenor);
 				break;
 				
 			case 6:
-				System.out.println("Opción no disponible :(");
+        notas.buscarNota(vectorNotas, cant);
 				break;
 				
 			case 7:
-				System.out.println("Opción no disponible :(");
+        notas.modificarNota(vectorNotas, cant);
 				break;
 				
 			case 8:
-				notas.eliminarNota(cant, vectorNotas);
+				notas.eliminarNota(vectorNotas, cant);
 				break;
 				
 			case 9:
 				System.out.println("Fin de la aplicación");
 				break;
+
 			default:
 				System.out.println("Opción no válida");
 				break;
