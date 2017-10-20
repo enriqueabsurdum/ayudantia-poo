@@ -1,2 +1,3 @@
-# ayudantia-poo
-Ayudantía Programación Orientada a Objeto
+## Ayudantía Programación Orientada a Objeto
+
+Ejercicios
