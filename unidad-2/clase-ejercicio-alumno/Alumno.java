@@ -137,4 +137,26 @@ public class Alumno {
       prom = acum / cant;
       return prom;
     }
+
+  public float promedioCurso(Alumno[] alumno, byte posicion) {
+    float prom = 0, acum = 0;
+    byte cant = 0;
+    for (byte i = 0; i < alumno.length; i++) {
+      acum = acum + promedio(alumno, i);
+      cant++;
+    }
+    prom = acum / cant;
+    return prom;
+  }
+    
+  public void mayorPromedio(Alumno[] alumno) {
+    for (byte i = 0; i < alumno.length; i++) {
+      if (promedio(alumno, i) > promedioCurso(alumno, i)) {
+        System.out.println("Nombre : " + alumno[i].getNombre()
+            + "\nApellido : " + alumno[i].getApellido()
+            + "\nRut : " + alumno[i].getRut()
+            + "\nPromedio : " + promedio(alumno, i));
+      }
+    }
+  }
 }
